@@ -7,17 +7,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-html,body{overflow-x:hidden;width:100%;height:100%;}
+html,body{width:100%;}
 body{font-family:'Poppins',sans-serif;background:#0a0a0a;color:#fff;position:relative;}
 .particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none;}
 .particle{position:absolute;width:4px;height:4px;background:rgba(79,70,229,0.6);border-radius:50%;animation:float-particle 20s infinite ease-in-out;}
 @keyframes float-particle{0%,100%{transform:translate(0,0) scale(1);opacity:0.3;}50%{transform:translate(var(--tx),var(--ty)) scale(1.5);opacity:0.8;}}
-nav{position:fixed;top:0;left:0;width:100%;padding:20px 80px;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,10,0.8);backdrop-filter:blur(10px);z-index:100;border-bottom:1px solid rgba(79,70,229,0.2);}
-.nav-logo{font-size:24px;font-weight:700;background:linear-gradient(135deg,#4f46e5,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.nav-links{display:flex;gap:30px;list-style:none;}
-.nav-links a{color:#fff;text-decoration:none;font-weight:500;transition:0.3s;}
-.nav-links a:hover{color:#4f46e5;}
-.hero{position:relative;width:100%;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:100px 20px 60px;z-index:2;}
+.hero{position:relative;width:100%;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:60px 20px;z-index:2;}
 .glow-orb{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(79,70,229,0.4),transparent 70%);filter:blur(100px);animation:pulse 8s infinite ease-in-out;z-index:-1;}
 .glow-orb.orb1{top:10%;left:10%;animation-delay:0s;}
 .glow-orb.orb2{bottom:10%;right:10%;background:radial-gradient(circle,rgba(124,58,237,0.4),transparent 70%);animation-delay:2s;}
@@ -48,34 +43,43 @@ nav{position:fixed;top:0;left:0;width:100%;padding:20px 80px;display:flex;justif
 .feature-icon{width:80px;height:80px;margin:0 auto 20px;background:linear-gradient(135deg,#4f46e5,#7c3aed);border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;}
 .feature-card h3{font-size:1.5rem;margin-bottom:15px;color:#fff;}
 .feature-card p{color:#999;line-height:1.6;}
+.text-reveal-section{width:100%;min-height:100vh;display:flex;justify-content:center;align-items:center;padding:80px 20px;background:#0a0a0a;position:relative;z-index:2;}
+.text-container{width:100%;max-width:1200px;}
+.text-line{display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:10px;}
+.text-word{font-family:'Bricolage Grotesque',sans-serif;font-size:7rem;font-weight:700;letter-spacing:-4px;color:#fff;display:inline-block;}
+.img-reveal{height:110px;width:0;border-radius:10px;overflow:hidden;position:relative;}
+.img-reveal img{height:100%;width:300px;position:absolute;left:50%;transform:translateX(-50%);border-radius:10px;object-fit:cover;}
 @media(max-width:768px){
-nav{padding:15px 20px;}
-.nav-links{display:none;}
-.main-title{font-size:3rem;}
-.subtitle{font-size:1.1rem;}
-.countdown{flex-wrap:wrap;gap:15px;}
-.countdown-item{padding:20px 25px;min-width:100px;}
-.countdown-number{font-size:2rem;}
-.notify-form{flex-direction:column;padding:0 20px;}
-.features-grid{grid-template-columns:1fr;}
+.hero{padding:40px 15px;}
+.badge{font-size:12px;padding:6px 16px;margin-bottom:20px;}
+.main-title{font-size:2.5rem;line-height:1.1;}
+.subtitle{font-size:1rem;margin-bottom:30px;padding:0 10px;}
+.countdown{flex-wrap:wrap;gap:10px;margin-bottom:30px;}
+.countdown-item{padding:15px 20px;min-width:80px;}
+.countdown-number{font-size:1.8rem;}
+.countdown-label{font-size:0.75rem;}
+.notify-form{flex-direction:column;padding:0 15px;gap:10px;}
+.notify-input{padding:14px 20px;font-size:14px;}
+.notify-btn{padding:14px 30px;font-size:14px;}
+.social-links{gap:15px;}
+.social-link{width:45px;height:45px;font-size:18px;}
+.glow-orb{width:300px;height:300px;}
+.text-reveal-section{padding:60px 15px;min-height:auto;}
+.text-container{padding:0;}
+.text-line{gap:10px;margin-bottom:15px;justify-content:flex-start;padding:0 10px;}
+.text-word{font-size:2rem;letter-spacing:-1px;line-height:1.2;}
+.img-reveal{height:45px;min-width:0;}
+.img-reveal img{width:100px;}
 }
 </style>
 </head>
 <body>
 <div class="particles" id="particles"></div>
-<nav>
-<div class="nav-logo">CraftWizHub</div>
-<ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="#features">Features</a></li>
-<li><a href="#notify">Notify Me</a></li>
-</ul>
-</nav>
 <section class="hero">
 <div class="glow-orb orb1"></div>
 <div class="glow-orb orb2"></div>
 <div class="coming-soon-container">
-<div class="badge"> LAUNCHING SOON</div>
+<div class="badge">LAUNCHING SOON</div>
 <h1 class="main-title">Something<br>Amazing<br>Is Coming</h1>
 <p class="subtitle">We're crafting an extraordinary experience. Stay tuned!</p>
 <div class="countdown">
@@ -108,32 +112,46 @@ nav{padding:15px 20px;}
 </div>
 </div>
 </section>
-<section class="features" id="features">
-<div class="features-grid">
-<div class="feature-card">
-<div class="feature-icon">⚡</div>
-<h3>Lightning Fast</h3>
-<p>Experience blazing fast performance with cutting-edge technology</p>
+<section class="text-reveal-section">
+<div class="text-container">
+<div class="text-line">
+<span class="text-word">Crafting</span>
+<span class="img-reveal">
+<img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400" alt="">
+</span>
+<span class="text-word">digital</span>
 </div>
-<div class="feature-card">
-<div class="feature-icon"></div>
-<h3>Beautiful Design</h3>
-<p>Stunning interfaces crafted with attention to every detail</p>
+<div class="text-line">
+<span class="text-word">solutions</span>
+<span class="img-reveal">
+<img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=400" alt="">
+</span>
+<span class="text-word">that</span>
 </div>
-<div class="feature-card">
-<div class="feature-icon"></div>
-<h3>Secure & Safe</h3>
-<p>Your data protected with enterprise-grade security</p>
+<div class="text-line">
+<span class="text-word">transform</span>
+<span class="img-reveal">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400" alt="">
+</span>
 </div>
-<div class="feature-card">
-<div class="feature-icon"></div>
-<h3>Innovation First</h3>
-<p>Built with the latest technologies and best practices</p>
+<div class="text-line">
+<span class="text-word">businesses</span>
+</div>
+<div class="text-line">
+<span class="text-word">and empower</span>
+<span class="img-reveal">
+<img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=400" alt="">
+</span>
+<span class="text-word">innovation.</span>
 </div>
 </div>
 </section>
+<footer style="text-align:center;padding:30px 20px;background:#0a0a0a;color:#666;font-size:14px;border-top:1px solid rgba(79,70,229,0.2);">
+<p>© 2026 CraftWizHub. All rights reserved.</p>
+</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.19/dist/lenis.min.js"></script>
 <script>
 const particlesContainer = document.getElementById('particles');
 for(let i = 0; i < 50; i++){
@@ -163,18 +181,6 @@ function updateCountdown(){
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-const featureCards = document.querySelectorAll('.feature-card');
-window.addEventListener('scroll', () => {
-  featureCards.forEach((card, index) => {
-    const cardTop = card.getBoundingClientRect().top;
-    if(cardTop < window.innerHeight - 100){
-      setTimeout(() => {
-        card.classList.add('show');
-      }, index * 100);
-    }
-  });
-});
-
 document.querySelector('.notify-form').addEventListener('submit', (e) => {
   e.preventDefault();
   alert('Thank you! We will notify you when we launch.');
@@ -186,6 +192,30 @@ gsap.from('.main-title', {
   opacity: 0,
   duration: 1,
   ease: 'power3.out'
+});
+
+const lenis = new Lenis();
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
+});
+gsap.ticker.lagSmoothing(0);
+
+document.querySelectorAll('.text-line').forEach((line) => {
+  const imgReveal = line.querySelector('.img-reveal');
+  if (imgReveal) {
+    const isMobile = window.innerWidth <= 768;
+    gsap.to(imgReveal, {
+      width: isMobile ? 100 : 300,
+      ease: "none",
+      scrollTrigger: {
+        trigger: line,
+        start: "top 90%",
+        end: "top 40%",
+        scrub: 1,
+      }
+    });
+  }
 });
 </script>
 </body>
